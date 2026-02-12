@@ -1,40 +1,22 @@
 // Main webhook handler for incoming WhatsApp messages
-const twilio = require('twilio');
-const { handleIncomingMessage } = require('../lib/message-handler');
+console.log('📝 WEBHOOK MODULE LOADED');
 
-// Twilio webhook validation helper
-function validateTwilioRequest(req) {
-  const authToken = process.env.TWILIO_AUTH_TOKEN;
-  const signature = req.headers['x-twilio-signature'];
-  const url = `https://${req.headers.host}${req.url}`;
-  
-  console.log('🔐 Validating Twilio request:', {
-    hasAuthToken: !!authToken,
-    hasSignature: !!signature,
-    url: url
-  });
-  
-  if (!authToken || !signature) {
-    console.log('⚠️ Missing auth token or signature');
-    return false;
-  }
-  
-  try {
-    return twilio.validateRequest(authToken, signature, url, req.body);
-  } catch (error) {
-    console.error('❌ Validation error:', error);
-    return false;
-  }
+const twilio = require('twilio');
+
+// Lazy load to avoid issues
+let handleIncomingMessage;
+try {
+  handleIncomingMessage = require('../lib/message-handler').handleIncomingMessage;
+  console.log('✅ Message handler loaded');
+} catch (e) {
+  console.error('❌ Failed to load message handler:', e);
 }
 
 module.exports = async (req, res) => {
+  // Log immediately
   console.log('🚀 WEBHOOK HIT:', {
     method: req.method,
     url: req.url,
-    headers: {
-      'x-twilio-signature': !!req.headers['x-twilio-signature'],
-      'content-type': req.headers['content-type']
-    },
     timestamp: new Date().toISOString()
   });
 
@@ -44,38 +26,51 @@ module.exports = async (req, res) => {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  // Temporarily skip validation for debugging
-  // const isValid = validateTwilioRequest(req);
-  // console.log('🔐 Request valid:', isValid);
-  
-  // if (!isValid) {
-  //   console.log('❌ Invalid Twilio signature');
-  //   return res.status(401).json({ error: 'Unauthorized' });
-  // }
-
   try {
-    console.log('📩 Processing webhook...');
-    console.log('📩 Request body:', JSON.stringify(req.body, null, 2));
+    console.log('📩 Request headers:', JSON.stringify(req.headers, null, 2));
+    console.log('📩 Request body type:', typeof req.body);
+    console.log('📩 Request body:', req.body);
+    
+    // Handle both JSON and form-urlencoded bodies
+    let bodyData = req.body;
+    if (typeof bodyData === 'string') {
+      // Try to parse if it's a string
+      try {
+        bodyData = JSON.parse(bodyData);
+      } catch (e) {
+        // It's form data, use as-is
+        console.log('📩 Body is form-urlencoded string');
+      }
+    }
     
     // Extract message details from Twilio
-    const from = req.body?.From;
-    const to = req.body?.To;
-    const body = req.body?.Body;
-    const messageSid = req.body?.MessageSid;
+    const from = bodyData?.From || bodyData?.from;
+    const to = bodyData?.To || bodyData?.to;
+    const body = bodyData?.Body || bodyData?.body;
+    const messageSid = bodyData?.MessageSid || bodyData?.messageSid;
 
-    console.log('📩 Extracted fields:', { from, to, body: body?.substring(0, 50), messageSid });
+    console.log('📩 Extracted:', { from, to, body: body?.substring(0, 50), messageSid });
 
     if (!from || !body) {
-      console.log('❌ Missing required fields (From or Body)');
+      console.log('❌ Missing required fields');
       res.set('Content-Type', 'text/xml');
       return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Message>Invalid request: missing required fields</Message>
+  <Message>Invalid request: missing From or Body</Message>
+</Response>`);
+    }
+
+    if (!handleIncomingMessage) {
+      console.error('❌ Message handler not available');
+      res.set('Content-Type', 'text/xml');
+      return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Message>Service temporarily unavailable. Please try again.</Message>
 </Response>`);
     }
 
     // Process the message
-    console.log('🔄 Calling handleIncomingMessage...');
+    console.log('🔄 Processing message...');
     const result = await handleIncomingMessage({
       from,
       to,
@@ -83,7 +78,7 @@ module.exports = async (req, res) => {
       messageSid
     });
 
-    console.log('✅ Processing result:', result.status);
+    console.log('✅ Result:', result.status);
 
     // Send TwiML response
     const reply = result.reply || 'Thank you for your message!';
@@ -92,19 +87,19 @@ module.exports = async (req, res) => {
   <Message>${reply}</Message>
 </Response>`;
 
-    console.log('📤 Sending TwiML response');
+    console.log('📤 Sending response');
     res.set('Content-Type', 'text/xml');
     res.status(200).send(twiml);
 
   } catch (error) {
-    console.error('❌ Webhook error:', error.message);
+    console.error('❌ ERROR:', error.message);
     console.error('Stack:', error.stack);
     
-    // Always send a valid TwiML response even on error
+    // Always send valid TwiML
     res.set('Content-Type', 'text/xml');
     res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Message>Sorry, I'm having trouble processing your request. Please try again or contact your coordinator.</Message>
+  <Message>Sorry, I'm having trouble. Please try again.</Message>
 </Response>`);
   }
 };
