@@ -1,6 +1,14 @@
 // Main webhook handler for incoming WhatsApp messages
 const { handleIncomingMessage } = require('../lib/message-handler');
 
+// Check environment variables on load
+console.log('Environment check:', {
+  hasAccountSid: !!process.env.TWILIO_ACCOUNT_SID,
+  hasAuthToken: !!process.env.TWILIO_AUTH_TOKEN,
+  hasPhoneNumber: !!process.env.TWILIO_PHONE_NUMBER,
+  hasGeminiKey: !!process.env.GEMINI_API_KEY
+});
+
 module.exports = async (req, res) => {
   // Only accept POST requests
   if (req.method !== 'POST') {
@@ -9,8 +17,8 @@ module.exports = async (req, res) => {
 
   try {
     console.log('Received webhook:', {
-      from: req.body.From,
-      body: req.body.Body,
+      from: req.body?.From,
+      body: req.body?.Body,
       timestamp: new Date().toISOString()
     });
     
