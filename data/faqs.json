@@ -1,0 +1,172 @@
+{
+  "faqs": [
+    {
+      "id": "faq_001",
+      "destination_id": "bangalore",
+      "category": "shopping",
+      "keywords": ["buy", "grocery", "supermarket", "store", "shop", "food", "vegetables", "fruits", "daily needs"],
+      "question": "Where can I buy groceries and daily essentials?",
+      "answer": "🛒 *Nearby Shopping Options:*\n\n• *BigBasket/Blinkit* - App-based delivery (30-45 min)\n• *D-Mart, Koramangala* - 1.5km, budget-friendly\n• *Food World* - 800m, premium groceries\n• *Reliance Smart* - 2km, everything under one roof\n• *Local Kirana stores* - Multiple within 200m for basics\n\n*Payment:* All accept UPI (Google Pay, PhonePe), cards, and cash\n*Timings:* Stores open 8AM-10PM, Kirana shops open till 11PM"
+    },
+    {
+      "id": "faq_002",
+      "destination_id": "bangalore",
+      "category": "transport",
+      "keywords": ["airport", "kempegowda", "how far", "reach", "travel", "cab", "taxi", "metro"],
+      "question": "How do I get from the airport to my accommodation?",
+      "answer": "✈️ *Airport Transfer Options:*\n\n• *Airport Bus (KIAS)*: ₹250-300, AC Volvo, drops near Koramangala\n• *Metro*: Airport to MG Road (45 min), then cab to accommodation\n• *Uber/Ola*: ₹800-1200, 45-60 min depending on traffic\n• *Prepaid Taxi*: ₹1000-1300 fixed rate from airport counter\n• *Airport Shuttle*: Check with accommodation if they provide pickup\n\n*Recommendation:* Metro + Cab is cheapest and reliable"
+    },
+    {
+      "id": "faq_003",
+      "destination_id": "bangalore",
+      "category": "emergency",
+      "keywords": ["help", "emergency", "police", "hospital", "doctor", "sick", "medical", "health"],
+      "question": "What should I do in case of emergency?",
+      "answer": "🚨 *Emergency Contacts:*\n\n• *Police*: 100\n• *Ambulance*: 108 (free government service)\n• *Fire*: 101\n• *Your Coordinator*: Anita Desai (+91 98451 23456)\n\n*Nearest Hospital:*\nManipal Hospital, Old Airport Road (4km)\nPhone: +91 80 2552 2222\n\n*Quick Tips:*\n✓ Save coordinator number in speed dial\n✓ Keep accommodation address written in phone\n✓ Download Practo app for doctor consultations\n✓ Pharmacies open 24/7 nearby"
+    },
+    {
+      "id": "faq_004",
+      "destination_id": "bangalore",
+      "category": "food",
+      "keywords": ["eat", "food", "restaurant", "dining", "lunch", "dinner", "breakfast", "cafe", "hotel"],
+      "question": "Where can I find good places to eat?",
+      "answer": "🍽️ *Food Recommendations:*\n\n*Budget Options (₹100-200):*\n• *Vidyarthi Bhavan* - Famous dosas, 3km\n• *CTR (Central Tiffin Room)* - Authentic South Indian, Malleswaram\n• *Local darshinis* - Multiple within 500m for quick meals\n\n*Mid-Range (₹300-600):*\n• *Truffles* - Burgers & Continental, Koramangala\n• *Meghana Foods* - Andhra biryani, multiple locations\n• *Toit Brewpub* - Pizza & craft beer, Indiranagar\n\n*Apps:* Swiggy, Zomato for home delivery\n*Note:* Many places accept UPI, no need for cash"
+    },
+    {
+      "id": "faq_005",
+      "destination_id": "hyderabad",
+      "category": "shopping",
+      "keywords": ["buy", "grocery", "supermarket", "store", "shop", "food", "vegetables", "fruits", "daily needs"],
+      "question": "Where can I buy groceries and daily essentials?",
+      "answer": "🛒 *Nearby Shopping Options:*\n\n• *D-Mart, Madhapur* - 2km, best prices\n• *Ratnadeep Supermarket* - 500m, premium groceries\n• *More Mega Store* - 1km, variety available\n• *BigBasket/Blinkit* - Home delivery available\n• *Local Kirana* - Multiple within 300m\n\n*Special:* Charminar area has great dry fruits and sweets\n*Payment:* UPI widely accepted, cards accepted in big stores\n*Timings:* 9AM-10PM, Kirana open till late"
+    },
+    {
+      "id": "faq_006",
+      "destination_id": "hyderabad",
+      "category": "transport",
+      "keywords": ["airport", "rgia", "shamshabad", "how far", "reach", "travel", "cab", "taxi", "metro"],
+      "question": "How do I get from the airport to my accommodation?",
+      "answer": "✈️ *Airport Transfer Options:*\n\n• *Pushpak Airport Bus*: ₹265, drops at Hitech City (45 min)\n• *Metro*: Airport Express to Raidurg (40 min), then auto/cab\n• *Uber/Ola*: ₹700-1000, 35-50 min\n• *Prepaid Taxi*: ₹800-1100 from airport\n• *Hotel Pickup*: Check if accommodation provides (recommended)\n\n*Note:* Airport is 35km from city - Metro is most reliable\n*Avoid:* Unofficial cabs outside airport"
+    },
+    {
+      "id": "faq_007",
+      "destination_id": "hyderabad",
+      "category": "emergency",
+      "keywords": ["help", "emergency", "police", "hospital", "doctor", "sick", "medical", "health"],
+      "question": "What should I do in case of emergency?",
+      "answer": "🚨 *Emergency Contacts:*\n\n• *Police*: 100\n• *Ambulance*: 108\n• *Fire*: 101\n• *Your Coordinator*: Vikram Reddy (+91 98451 23457)\n\n*Nearest Hospital:*\nApollo Hospital, Jubilee Hills (5km)\nPhone: +91 40 2360 6666\n\n*Pharmacies:*\n• Apollo Pharmacy - 24/7, 500m\n• MedPlus - Multiple nearby\n\n*Tips:*\n✓ Stay hydrated - Hyderabad heat can cause dehydration\n✓ Save coordinator's number\n✓ Keep soft copy of ID and accommodation details"
+    },
+    {
+      "id": "faq_008",
+      "destination_id": "hyderabad",
+      "category": "food",
+      "keywords": ["eat", "food", "restaurant", "dining", "lunch", "dinner", "breakfast", "cafe", "hotel", "biryani"],
+      "question": "Where can I find good places to eat?",
+      "answer": "🍽️ *Must-Try Food in Hyderabad:*\n\n*Iconic Biryani:*\n• *Paradise, Secunderabad* - World-famous biryani\n• *Bawarchi, RTC X Roads* - Authentic taste\n• *Shah Ghouse* - Mid-night biryani available\n\n*Budget Meals:*\n• *Santosh Dhaba* - Vegetarian thalis\n• *Cafe Bahar* - Affordable and tasty\n• *Local tiffin centers* - Idli, dosa for breakfast\n\n*Cafes & Modern:*\n• *Concu, Jubilee Hills* - French cafe\n• *Beyond Coffee* - Work-friendly cafes\n\n*Apps:* Swiggy, Zomato deliver everywhere"
+    },
+    {
+      "id": "faq_009",
+      "destination_id": "pune",
+      "category": "shopping",
+      "keywords": ["buy", "grocery", "supermarket", "store", "shop", "food", "vegetables", "fruits", "daily needs"],
+      "question": "Where can I buy groceries and daily essentials?",
+      "answer": "🛒 *Nearby Shopping Options:*\n\n• *D-Mart, Hadapsar* - 3km, budget shopping\n• *Reliance Smart, Magarpatta* - 1km, convenient\n• *Nature's Basket* - Premium groceries, 2km\n• *BigBasket/Blinkit* - Quick delivery\n• *Local Kirana* - Multiple in Magarpatta City\n\n*Special:*\n• *Seasons Mall* - 500m, has Big Bazaar\n• *Amanora Mall* - 2km, hypermarket\n\n*Payment:* UPI works everywhere, cards accepted in malls\n*Timings:* 10AM-10PM for stores"
+    },
+    {
+      "id": "faq_010",
+      "destination_id": "pune",
+      "category": "transport",
+      "keywords": ["airport", "lohegaon", "how far", "reach", "travel", "cab", "taxi", "metro", "bus"],
+      "question": "How do I get from the airport to my accommodation?",
+      "answer": "✈️ *Airport Transfer Options:*\n\n• *PMPML Bus*: ₹50, connects to Magarpatta (1 hour)\n• *Uber/Ola*: ₹400-600, 25-40 min\n• *Prepaid Taxi*: ₹500-700 from airport\n• *Hotel Pickup*: Recommended - check with accommodation\n• *Private Cabs*: ₹600-800\n\n*Note:* Airport is 12km from Magarpatta\n*Metro:* Limited connectivity, better to use cab\n*Best Option:* Uber/Ola - reliable and trackable"
+    },
+    {
+      "id": "faq_011",
+      "destination_id": "pune",
+      "category": "emergency",
+      "keywords": ["help", "emergency", "police", "hospital", "doctor", "sick", "medical", "health"],
+      "question": "What should I do in case of emergency?",
+      "answer": "🚨 *Emergency Contacts:*\n\n• *Police*: 100\n• *Ambulance*: 108\n• *Fire*: 101\n• *Your Coordinator*: Neha Joshi (+91 98451 23458)\n\n*Nearest Hospital:*\nRuby Hall Clinic, Sassoon Road (6km)\nPhone: +91 20 2610 3333\n\n*Other Options:*\n• *Jehangir Hospital* - Near Station\n• *Sahyadri Hospital* - Hadapsar (4km)\n\n*Tips:*\n✓ Pune weather is pleasant but carry light raincoat\n✓ Keep accommodation details handy\n✓ Download 1mg/Practo for medicine delivery"
+    },
+    {
+      "id": "faq_012",
+      "destination_id": "pune",
+      "category": "food",
+      "keywords": ["eat", "food", "restaurant", "dining", "lunch", "dinner", "breakfast", "cafe", "hotel", "misal", "vadapav"],
+      "question": "Where can I find good places to eat?",
+      "answer": "🍽️ *Pune Food Guide:*\n\n*Must-Try Local:*\n• *Misal Pav*: Bedekar Misal, Kata Kirr\n• *Vada Pav*: Garden Vada Pav, FC Road\n• *Pithla Bhakri*: Local eateries in Sadashiv Peth\n\n*Popular Areas:*\n• *FC Road & JM Road* - Student favorites, affordable\n• *Koregaon Park* - Cafes and pubs\n• *Camp Area* - Mix of traditional and modern\n\n*Recommendations:*\n• *Vaishali* - Iconic South Indian, FC Road\n• *German Bakery* - Koregaon Park\n• *Chaitanya Paranthas* - Famous parathas\n\n*Apps:* Swiggy, Zomato work great here"
+    },
+    {
+      "id": "faq_013",
+      "destination_id": "bangalore",
+      "category": "wifi",
+      "keywords": ["wifi", "internet", "password", "network", "connection", "online"],
+      "question": "What's the WiFi password and how's the internet?",
+      "answer": "📶 *Internet & WiFi Details:*\n\n*Accommodation WiFi:*\n• Network: Prestige Residency\n• Password: InternWelcome2025\n• Speed: 50 Mbps, unlimited\n\n*Backup Options:*\n• *Mobile Data*: Jio/Airtel work excellently (4G/5G available)\n• *Nearby Cafes*: Most have free WiFi\n• *Coworking Spaces*: WeWork, Awfis nearby\n\n*Tips:*\n✓ Save password in your phone\n✓ Keep mobile data as backup\n✓ Cafes like Starbucks, Third Wave have reliable WiFi\n✓ Metro stations have free WiFi"
+    },
+    {
+      "id": "faq_014",
+      "destination_id": "hyderabad",
+      "category": "wifi",
+      "keywords": ["wifi", "internet", "password", "network", "connection", "online"],
+      "question": "What's the WiFi password and how's the internet?",
+      "answer": "📶 *Internet & WiFi Details:*\n\n*Accommodation WiFi:*\n• Network: Cyber Heights\n• Password: WelcomeHyd2025\n• Speed: 100 Mbps, unlimited\n\n*Mobile Data:*\n• Jio and Airtel have excellent 4G/5G coverage\n• Consider getting local SIM for better rates\n\n*Public WiFi:*\n• Hyderabad Metro has free WiFi\n• Many cafes in Hitech City offer WiFi\n• Starbucks, Cafe Coffee Day reliable options\n\n*Note:* Internet in Hitech City area is generally very fast and reliable"
+    },
+    {
+      "id": "faq_015",
+      "destination_id": "pune",
+      "category": "wifi",
+      "keywords": ["wifi", "internet", "password", "network", "connection", "online"],
+      "question": "What's the WiFi password and how's the internet?",
+      "answer": "📶 *Internet & WiFi Details:*\n\n*Accommodation WiFi:*\n• Network: Magarpatta Residency\n• Password: PuneIntern2025\n• Speed: 75 Mbps, unlimited\n\n*Connectivity:*\n• Magarpatta has excellent fiber connectivity\n• Mobile data (Jio/Airtel) very reliable\n• No major connectivity issues expected\n\n*Workspaces:*\n• WeWork Magarpatta nearby\n• Starbucks Seasons Mall (500m)\n• Multiple cafes in Amanora Mall\n\n*Tips:*\n✓ Test WiFi on first day\n✓ Keep mobile hotspot ready\n✓ Power backup available in accommodation"
+    },
+    {
+      "id": "faq_016",
+      "destination_id": "bangalore",
+      "category": "places",
+      "keywords": ["visit", "places", "sightseeing", "weekend", "things to do", "explore", "nearby", "tourist"],
+      "question": "What places can I visit on weekends?",
+      "answer": "🏛️ *Weekend Getaways & Places to Visit:*\n\n*In City (Day trips):*\n• *Lalbagh Botanical Garden* - Famous glass house\n• *Bangalore Palace* - Tudor-style architecture\n• *Cubbon Park* - Morning walks\n• *Commercial Street/MG Road* - Shopping\n\n*Nearby (Weekend trips):*\n• *Mysore* (3 hrs) - Palace, Chamundi Hills\n• *Coorg* (5 hrs) - Coffee plantations\n• *Ooty* (6 hrs) - Hill station\n• *Nandi Hills* (2 hrs) - Sunrise point\n\n*Apps:*\n• Book cabs with Uber/Ola for day trips\n• KSRTC buses available for Mysore\n• MakeMyTrip for weekend bookings"
+    },
+    {
+      "id": "faq_017",
+      "destination_id": "hyderabad",
+      "category": "places",
+      "keywords": ["visit", "places", "sightseeing", "weekend", "things to do", "explore", "nearby", "tourist"],
+      "question": "What places can I visit on weekends?",
+      "answer": "🏛️ *Must-Visit Places in Hyderabad:*\n\n*Historical:*\n• *Charminar* - Iconic monument, shopping nearby\n• *Golconda Fort* - Light & sound show in evening\n• *Salar Jung Museum* - One of world's largest\n• *Chowmahalla Palace* - Nizam's palace\n\n*Modern:*\n• *Hussain Sagar Lake* - Buddha statue, boating\n• *Ramoji Film City* (1 hour) - Full day trip\n• *Wonderla* - Amusement park\n\n*Weekend Getaways:*\n• *Warangal* (3 hrs) - Historical city\n• *Nagarjuna Sagar* (3 hrs) - Dam & waterfalls\n• *Ananthagiri Hills* (2 hrs) - Trekking\n\n*Tips:*\n✓ Charminar best visited early morning\n✓ Carry water - it gets hot\n✓ Book Ramoji tickets online"
+    },
+    {
+      "id": "faq_018",
+      "destination_id": "pune",
+      "category": "places",
+      "keywords": ["visit", "places", "sightseeing", "weekend", "things to do", "explore", "nearby", "tourist"],
+      "question": "What places can I visit on weekends?",
+      "answer": "🏛️ *Pune & Nearby Attractions:*\n\n*In Pune:*\n• *Shaniwar Wada* - Historical fort\n• *Sinhagad Fort* - Trekking & views\n• *Aga Khan Palace* - Gandhi memorial\n• *Osho International Meditation Resort*\n• *Pataleshwar Cave Temple*\n\n*Nearby Hill Stations:*\n• *Lonavala-Khandala* (1.5 hrs) - Beautiful ghats\n• *Mahabaleshwar* (3 hrs) - Strawberry farms\n• *Matheran* (2.5 hrs) - Toy train, no vehicles\n• *Lavasa* (2 hrs) - Planned hill city\n\n*Beaches:*\n• *Alibaug* (3 hrs) - Ferry from Gateway\n• *Kashid* (4 hrs) - Clean beach\n\n*Best Time:* Monsoon (June-Sept) is magical!"
+    },
+    {
+      "id": "faq_019",
+      "destination_id": "bangalore",
+      "category": "local_customs",
+      "keywords": ["language", "speak", "kannada", "local", "customs", "culture", "etiquette", "dress"],
+      "question": "Do I need to know Kannada? Any local customs to follow?",
+      "answer": "🗣️ *Language & Local Customs:*\n\n*Language:*\n• *English works everywhere* - Especially in offices, malls, restaurants\n• *Hindi widely understood*\n• *Kannada nice-to-know* but not essential\n\n*Basic Kannada Phrases:*\n• Namaskara = Hello\n• Dhanyavadagalu = Thank you\n• Hegiddira? = How are you?\n• Kannada gottilla = I don't know Kannada\n\n*Customs:*\n• Dress modestly when visiting temples\n• Remove shoes before entering homes\n• Right hand for eating/giving\n• Tipping 5-10% in restaurants appreciated\n\n*Note:* Bangalore is very cosmopolitan - you'll feel at home!"
+    },
+    {
+      "id": "faq_020",
+      "destination_id": "hyderabad",
+      "category": "local_customs",
+      "keywords": ["language", "speak", "telugu", "urdu", "local", "customs", "culture", "etiquette", "dress"],
+      "question": "Do I need to know Telugu or Urdu? Any local customs?",
+      "answer": "🗣️ *Language & Culture in Hyderabad:*\n\n*Language:*\n• *English sufficient* - Works in IT areas, malls, offices\n• *Hindi understood* almost everywhere\n• *Telugu/Urdu* - Nice but not necessary\n\n*Useful Phrases:*\n• Namaste = Hello\n• Sukriya = Thank you (Urdu/Hindi)\n• Baagundi = Good (Telugu)\n• Kitna? = How much? (Hindi)\n\n*Local Culture:*\n• Hyderabadi Tehzeeb - Very polite culture\n• Traditional salwar/jeans fine, modest dress for Old City\n• Ramzan time - Many eateries closed daytime\n• Biryani etiquette - Eat with hands for authentic experience!\n\n*Special:*\n• Friday afternoons quieter due to prayers\n• Irani chai culture - Must try at cafes"
+    },
+    {
+      "id": "faq_021",
+      "destination_id": "pune",
+      "category": "local_customs",
+      "keywords": ["language", "speak", "marathi", "local", "customs", "culture", "etiquette", "dress"],
+      "question": "Do I need to know Marathi? Any local customs to follow?",
+      "answer": "🗣️ *Language & Local Culture:*\n\n*Language:*\n• *English widely spoken* - Especially in Magarpatta, IT areas\n• *Hindi works perfectly*\n• *Marathi not required* but appreciated\n\n*Simple Marathi:*\n• Namaskar = Hello\n• Dhanyawad = Thank you\n• Kasa ahes? = How are you? (to male)\n• Baray = Good/Fine\n\n*Pune Culture:*\n• *Youth city* - Very open and liberal\n• Traditional + Modern mix\n• Ganesh Chaturthi (Aug-Sep) - Big festival, exciting time\n• Dress casual - Jeans/t-shirts perfectly fine\n\n*Tips:*\n• Punekars love their afternoon naps (1-4 PM quieter)\n• Evening walks common in societies\n• Very safe city, but normal precautions apply"
+    }
+  ]
+}

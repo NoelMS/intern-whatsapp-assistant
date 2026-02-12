@@ -1,0 +1,142 @@
+{
+  "destinations": [
+    {
+      "id": "bangalore",
+      "name": "Bangalore, Karnataka",
+      "country": "India",
+      "description": "India's Silicon Valley - A vibrant tech hub with pleasant weather year-round, known for its parks, breweries, and cosmopolitan culture",
+      "coordinator": {
+        "id": "coord_001",
+        "name": "Anita Desai",
+        "phone": "+919845123456",
+        "email": "anita.desai@company.com",
+        "whatsapp": "+919845123456"
+      },
+      "accommodation": {
+        "name": "Prestige Residency",
+        "address": "#42, Koramangala 5th Block, Bangalore - 560095",
+        "landmark": "Near Sony World Signal",
+        "check_in": "2025-03-01",
+        "wifi": "InternWelcome2025",
+        "room_number": "304",
+        "nearest_metro": "MG Road Metro (3 km)",
+        "nearest_bus_stop": "Koramangala Bus Stand (500m)"
+      },
+      "emergency_info": {
+        "local_police": "100",
+        "ambulance": "108",
+        "fire": "101",
+        "nearest_hospital": "Manipal Hospital, Old Airport Road - 4km",
+        "hospital_phone": "+918025522222",
+        "embassy_contact": "Not required (within India)"
+      },
+      "local_tips": {
+        "currency": "Indian Rupees (INR)",
+        "timezone": "IST (UTC+5:30)",
+        "language": "Kannada, Hindi, English widely spoken",
+        "weather": "Pleasant year-round (20-28°C). Carry light jacket for evenings",
+        "transport": "Namma Metro, BMTC buses, Ola/Uber autos and cabs widely available",
+        "power": "230V, Type D & M sockets (carry adapter if needed)"
+      },
+      "popular_areas": [
+        "MG Road - Shopping and nightlife",
+        "Indiranagar - Cafes and restaurants",
+        "Koramangala - Food and entertainment",
+        "Electronic City - IT hub",
+        "Whitefield - Tech parks"
+      ]
+    },
+    {
+      "id": "hyderabad",
+      "name": "Hyderabad, Telangana",
+      "country": "India",
+      "description": "City of Pearls - A historic city blending traditional culture with modern IT industry, famous for biryani and iconic Charminar",
+      "coordinator": {
+        "id": "coord_002",
+        "name": "Vikram Reddy",
+        "phone": "+919845123457",
+        "email": "vikram.reddy@company.com",
+        "whatsapp": "+919845123457"
+      },
+      "accommodation": {
+        "name": "Cyber Heights Apartments",
+        "address": "Hitech City Main Road, Madhapur, Hyderabad - 500081",
+        "landmark": "Near Cyber Towers",
+        "check_in": "2025-03-15",
+        "wifi": "WelcomeHyd2025",
+        "room_number": "215",
+        "nearest_metro": "Hitech City Metro (1 km)",
+        "nearest_bus_stop": "Madhapur Bus Stop (300m)"
+      },
+      "emergency_info": {
+        "local_police": "100",
+        "ambulance": "108",
+        "fire": "101",
+        "nearest_hospital": "Apollo Hospital, Jubilee Hills - 5km",
+        "hospital_phone": "+918402366666",
+        "embassy_contact": "Not required (within India)"
+      },
+      "local_tips": {
+        "currency": "Indian Rupees (INR)",
+        "timezone": "IST (UTC+5:30)",
+        "language": "Telugu, Hindi, Urdu, English widely spoken",
+        "weather": "Hot summers (35-40°C), pleasant winters (15-25°C). Stay hydrated!",
+        "transport": "Hyderabad Metro, TSRTC buses, autos (negotiate fare), Rapido bikes",
+        "power": "230V, Type D & M sockets"
+      },
+      "popular_areas": [
+        "Hitech City - IT hub",
+        "Banjara Hills & Jubilee Hills - Upscale dining",
+        "Charminar area - Old city culture",
+        "Gachibowli - Financial district",
+        "Hussain Sagar Lake - Recreation"
+      ]
+    },
+    {
+      "id": "pune",
+      "name": "Pune, Maharashtra",
+      "country": "India",
+      "description": "Oxford of the East - A student city with pleasant weather, known for education institutions, nearby hill stations, and vibrant youth culture",
+      "coordinator": {
+        "id": "coord_003",
+        "name": "Neha Joshi",
+        "phone": "+919845123458",
+        "email": "neha.joshi@company.com",
+        "whatsapp": "+919845123458"
+      },
+      "accommodation": {
+        "name": "Magarpatta City Residency",
+        "address": "Tower 12, Magarpatta City, Hadapsar, Pune - 411028",
+        "landmark": "Near Seasons Mall",
+        "check_in": "2025-04-01",
+        "wifi": "PuneIntern2025",
+        "room_number": "412",
+        "nearest_metro": "Civil Court Metro (8 km) - Auto recommended",
+        "nearest_bus_stop": "Magarpatta Bus Stop (200m)"
+      },
+      "emergency_info": {
+        "local_police": "100",
+        "ambulance": "108",
+        "fire": "101",
+        "nearest_hospital": "Ruby Hall Clinic, Sassoon Road - 6km",
+        "hospital_phone": "+912026103333",
+        "embassy_contact": "Not required (within India)"
+      },
+      "local_tips": {
+        "currency": "Indian Rupees (INR)",
+        "timezone": "IST (UTC+5:30)",
+        "language": "Marathi, Hindi, English widely spoken",
+        "weather": "Pleasant climate (18-30°C). Best weather in India. Light showers common",
+        "transport": "Pune Metro (limited), PMPML buses, autos (use meter), Rapido",
+        "power": "230V, Type D & M sockets"
+      },
+      "popular_areas": [
+        "Koregaon Park - Upscale area",
+        "MG Road & Camp - Shopping",
+        "FC Road & JM Road - Student hangouts",
+        "Magarpatta - IT zone",
+        "Viman Nagar - Restaurants"
+      ]
+    }
+  ]
+}

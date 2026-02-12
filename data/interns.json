@@ -1,0 +1,46 @@
+{
+  "interns": [
+    {
+      "id": "intern_001",
+      "name": "Rahul Sharma",
+      "phone": "+911234567890",
+      "destination_id": "bangalore",
+      "start_date": "2025-03-01",
+      "end_date": "2025-05-31",
+      "coordinator_id": "coord_001",
+      "emergency_contact": {
+        "name": "Rajesh Sharma",
+        "phone": "+919876543210",
+        "relationship": "Father"
+      }
+    },
+    {
+      "id": "intern_002",
+      "name": "Priya Patel",
+      "phone": "+919876543211",
+      "destination_id": "hyderabad",
+      "start_date": "2025-03-15",
+      "end_date": "2025-06-15",
+      "coordinator_id": "coord_002",
+      "emergency_contact": {
+        "name": "Sunita Patel",
+        "phone": "+919876543212",
+        "relationship": "Mother"
+      }
+    },
+    {
+      "id": "intern_003",
+      "name": "Arun Kumar",
+      "phone": "+919876543213",
+      "destination_id": "pune",
+      "start_date": "2025-04-01",
+      "end_date": "2025-06-30",
+      "coordinator_id": "coord_003",
+      "emergency_contact": {
+        "name": "Lakshmi Kumar",
+        "phone": "+919876543214",
+        "relationship": "Mother"
+      }
+    }
+  ]
+}

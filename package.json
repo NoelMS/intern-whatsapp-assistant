@@ -1,0 +1,28 @@
+{
+  "name": "intern-whatsapp-assistant",
+  "version": "1.0.0",
+  "description": "WhatsApp support assistant for interns with AI-powered FAQ responses",
+  "main": "api/webhook.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "send-welcome": "node scripts/send-welcome.js",
+    "test-webhook": "node scripts/test-webhook.js"
+  },
+  "dependencies": {
+    "twilio": "^4.19.0"
+  },
+  "engines": {
+    "node": "18.x"
+  },
+  "keywords": [
+    "whatsapp",
+    "twilio",
+    "gemini",
+    "ai",
+    "intern",
+    "assistant"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
