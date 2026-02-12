@@ -16,8 +16,10 @@ module.exports = async (req, res) => {
   }
 
   try {
-    console.log('Received webhook:', {
+    console.log('📩 RAW WEBHOOK DATA:', JSON.stringify(req.body, null, 2));
+    console.log('📩 Extracted:', {
       from: req.body?.From,
+      to: req.body?.To,
       body: req.body?.Body,
       timestamp: new Date().toISOString()
     });
