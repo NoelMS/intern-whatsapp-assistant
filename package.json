@@ -10,7 +10,7 @@
     "test-webhook": "node scripts/test-webhook.js"
   },
   "dependencies": {
-    "twilio": "^4.19.0"
+    "twilio": "^4.23.0"
   },
   "engines": {
     "node": "24.x"
