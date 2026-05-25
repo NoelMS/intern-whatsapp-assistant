@@ -7,13 +7,22 @@
     "dev": "vercel dev",
     "deploy": "vercel --prod",
     "send-welcome": "node scripts/send-welcome.js",
-    "test-webhook": "node scripts/test-webhook.js"
+    "test-webhook": "node scripts/test-webhook.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:unit": "jest --testPathPattern=__tests__/unit",
+    "lint": "node -c api/webhook.js && node -c lib/*.js && node -c scripts/*.js",
+    "validate": "npm run lint && npm test"
   },
   "dependencies": {
     "twilio": "^4.23.0"
   },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nock": "^13.4.0"
+  },
   "engines": {
-    "node": "24.x"
+    "node": "18.x || 20.x || 24.x"
   },
   "keywords": [
     "whatsapp",

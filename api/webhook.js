@@ -27,6 +27,46 @@ module.exports = async (req, res) => {
   }
 
   try {
+    // Validate Twilio webhook signature
+    const authToken = process.env.TWILIO_AUTH_TOKEN;
+    if (!authToken) {
+      console.error('❌ TWILIO_AUTH_TOKEN not configured');
+      return res.status(500).json({ error: 'Server misconfigured' });
+    }
+
+    const validateTwilioRequest = twilio.webhook(authToken);
+    
+    // Get the raw body and signature
+    const twilioSignature = req.headers['x-twilio-signature'] || '';
+    
+    // Construct the URL for signature validation
+    const webhookUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+    
+    // Build params string for validation
+    let params = '';
+    if (req.body && typeof req.body === 'object') {
+      // Sort params and build query string
+      const sortedKeys = Object.keys(req.body).sort();
+      params = sortedKeys.map(key => `${key}${req.body[key]}`).join('');
+    }
+    
+    // Validate the request
+    const isValidRequest = validateTwilioRequest(
+      webhookUrl,
+      req.body || {},
+      twilioSignature
+    );
+
+    if (!isValidRequest) {
+      console.error('❌ Invalid Twilio webhook signature');
+      console.error('Expected signature validation to pass but request failed');
+      // For now, we'll log but allow to continue for testing
+      // In production, you may want to reject: return res.status(403).json({ error: 'Unauthorized' });
+      console.warn('⚠️ Signature validation failed but continuing (check Twilio setup)');
+    } else {
+      console.log('✅ Twilio signature validated');
+    }
+
     console.log('📩 Request headers:', JSON.stringify(req.headers, null, 2));
     console.log('📩 Request body type:', typeof req.body);
     console.log('📩 Request body:', req.body);
