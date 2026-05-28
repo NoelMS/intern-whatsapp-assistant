@@ -41,6 +41,20 @@
         "phone": "+919876543214",
         "relationship": "Mother"
       }
+    },
+    {
+      "id": "intern_004",
+      "name": "Noel Mathew Sajan",
+      "phone": "+917025135070",
+      "destination_id": "bangalore",
+      "start_date": "2025-05-01",
+      "end_date": "2025-08-31",
+      "coordinator_id": "coord_001",
+      "emergency_contact": {
+        "name": "Test Contact",
+        "phone": "+919999999999",
+        "relationship": "Contact"
+      }
     }
   ]
 }
