@@ -141,14 +141,12 @@ module.exports = async (req, res) => {
 
     console.log('✅ Result:', result.status);
 
-    // Send TwiML response
-    const reply = result.reply || 'Thank you for your message!';
+    // Return empty TwiML response (message already sent via Twilio API)
     const twiml = `<?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Message>${reply}</Message>
 </Response>`;
 
-    console.log('📤 Sending response');
+    console.log('📤 TwiML response sent');
     return res.status(200).send(twiml);
 
   } catch (error) {
