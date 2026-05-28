@@ -2,6 +2,7 @@
 console.log('📝 WEBHOOK MODULE LOADED');
 
 const twilio = require('twilio');
+const crypto = require('crypto');
 
 // Lazy load to avoid issues
 let handleIncomingMessage;
@@ -10,6 +11,26 @@ try {
   console.log('✅ Message handler loaded');
 } catch (e) {
   console.error('❌ Failed to load message handler:', e);
+}
+
+// Manual Twilio signature validation for Vercel
+function validateTwilioSignature(url, params, signature, authToken) {
+  try {
+    // Build the data string from params
+    const keys = Object.keys(params).sort();
+    let data = url;
+    keys.forEach(key => {
+      data += key + params[key];
+    });
+    
+    // Create HMAC-SHA1 hash
+    const hash = crypto.createHmac('sha1', authToken).update(data).digest('base64');
+    
+    return hash === signature;
+  } catch (error) {
+    console.error('Signature validation error:', error.message);
+    return false;
+  }
 }
 
 module.exports = async (req, res) => {
@@ -55,12 +76,12 @@ module.exports = async (req, res) => {
     console.log('   URL:', webhookUrl);
     console.log('   Signature:', twilioSignature.substring(0, 10) + '...');
     
-    // Validate the request
-    const validateTwilioRequest = twilio.webhook(authToken);
-    const isValidRequest = validateTwilioRequest(
+    // Validate using manual HMAC-SHA1
+    const isValidRequest = validateTwilioSignature(
       webhookUrl,
       req.body || {},
-      twilioSignature
+      twilioSignature,
+      authToken
     );
 
     if (!isValidRequest) {
