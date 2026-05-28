@@ -13,6 +13,9 @@ try {
 }
 
 module.exports = async (req, res) => {
+  // Set content type for all responses (Vercel compatibility)
+  res.setHeader('Content-Type', 'text/xml');
+  
   // Log immediately
   console.log('🚀 WEBHOOK HIT:', {
     method: req.method,
@@ -23,7 +26,10 @@ module.exports = async (req, res) => {
   // Only accept POST requests
   if (req.method !== 'POST') {
     console.log('❌ Rejected: Method not allowed');
-    return res.status(405).json({ error: 'Method not allowed' });
+    return res.status(405).send(`<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Message>Method not allowed</Message>
+</Response>`);
   }
 
   try {
@@ -31,26 +37,26 @@ module.exports = async (req, res) => {
     const authToken = process.env.TWILIO_AUTH_TOKEN;
     if (!authToken) {
       console.error('❌ TWILIO_AUTH_TOKEN not configured');
-      return res.status(500).json({ error: 'Server misconfigured' });
+      return res.status(500).send(`<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Message>Server misconfigured: missing TWILIO_AUTH_TOKEN</Message>
+</Response>`);
     }
 
-    const validateTwilioRequest = twilio.webhook(authToken);
-    
     // Get the raw body and signature
     const twilioSignature = req.headers['x-twilio-signature'] || '';
     
-    // Construct the URL for signature validation
-    const webhookUrl = `${req.protocol}://${req.get('host')}${req.originalUrl}`;
+    // For Vercel, get host from headers
+    const host = req.headers.host || 'unknown';
+    const protocol = req.headers['x-forwarded-proto'] || 'https';
+    const webhookUrl = `${protocol}://${host}${req.url}`;
     
-    // Build params string for validation
-    let params = '';
-    if (req.body && typeof req.body === 'object') {
-      // Sort params and build query string
-      const sortedKeys = Object.keys(req.body).sort();
-      params = sortedKeys.map(key => `${key}${req.body[key]}`).join('');
-    }
+    console.log('🔐 Validating Twilio signature...');
+    console.log('   URL:', webhookUrl);
+    console.log('   Signature:', twilioSignature.substring(0, 10) + '...');
     
     // Validate the request
+    const validateTwilioRequest = twilio.webhook(authToken);
     const isValidRequest = validateTwilioRequest(
       webhookUrl,
       req.body || {},
@@ -58,11 +64,7 @@ module.exports = async (req, res) => {
     );
 
     if (!isValidRequest) {
-      console.error('❌ Invalid Twilio webhook signature');
-      console.error('Expected signature validation to pass but request failed');
-      // For now, we'll log but allow to continue for testing
-      // In production, you may want to reject: return res.status(403).json({ error: 'Unauthorized' });
-      console.warn('⚠️ Signature validation failed but continuing (check Twilio setup)');
+      console.warn('⚠️ Invalid Twilio webhook signature (continuing for staging)');
     } else {
       console.log('✅ Twilio signature validated');
     }
@@ -93,7 +95,6 @@ module.exports = async (req, res) => {
 
     if (!from || !body) {
       console.log('❌ Missing required fields');
-      res.set('Content-Type', 'text/xml');
       return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Message>Invalid request: missing From or Body</Message>
@@ -102,7 +103,6 @@ module.exports = async (req, res) => {
 
     if (!handleIncomingMessage) {
       console.error('❌ Message handler not available');
-      res.set('Content-Type', 'text/xml');
       return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Message>Service temporarily unavailable. Please try again.</Message>
@@ -128,16 +128,14 @@ module.exports = async (req, res) => {
 </Response>`;
 
     console.log('📤 Sending response');
-    res.set('Content-Type', 'text/xml');
-    res.status(200).send(twiml);
+    return res.status(200).send(twiml);
 
   } catch (error) {
     console.error('❌ ERROR:', error.message);
     console.error('Stack:', error.stack);
     
     // Always send valid TwiML
-    res.set('Content-Type', 'text/xml');
-    res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
+    return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
 <Response>
   <Message>Sorry, I'm having trouble. Please try again.</Message>
 </Response>`);
