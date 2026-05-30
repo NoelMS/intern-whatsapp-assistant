@@ -1,0 +1,27 @@
+{
+  "name": "grok-connector-server",
+  "version": "1.0.0",
+  "description": "Standalone webhook server for Grok API integration",
+  "main": "grok-connector-server.js",
+  "scripts": {
+    "start": "node grok-connector-server.js",
+    "dev": "node grok-connector-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "openai": "^4.52.0"
+  },
+  "engines": {
+    "node": "18.x || 20.x || 24.x"
+  },
+  "keywords": [
+    "grok",
+    "xai",
+    "webhook",
+    "api",
+    "whatsapp"
+  ],
+  "author": "InternBot",
+  "license": "MIT"
+}
