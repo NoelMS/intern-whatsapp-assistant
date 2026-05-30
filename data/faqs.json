@@ -119,6 +119,12 @@
       "destination_id": "coimbatore",
       "question": "Are there medical facilities available on campus?",
       "answer": "Yes! Karunya Medical Centre on campus: Open 8 AM - 6 PM daily (24/7 for emergencies). Basic treatments, first aid, medicines available. For serious cases: Referred to Ganga Hospital (15km) or Apollo (Coimbatore). Medical consultation: Free for students. Medicines: Nominal cost. Insurance: Check your enrollment details."
+    },
+    {
+      "id": "faq_021",
+      "destination_id": "coimbatore",
+      "question": "Where can I eat near Coimbatore airport?",
+      "answer": "Places to eat near Coimbatore International Airport: 1) Airport terminal has a small food court (basic snacks and meals). 2) Nearby area (Peelamedu, 2-3km): Annapoorna Restaurant, Hotel Sree Annapoorna (South Indian), KFC and McDonald's on Avanashi Road. 3) Tidel Park area has several restaurants and cafes. Budget: ₹100-400 per meal. Uber/Ola available from airport to reach nearby restaurants. Note: Karunya campus is 25km from the airport - eat at the airport area before your long journey."
     }
   ]
 }
