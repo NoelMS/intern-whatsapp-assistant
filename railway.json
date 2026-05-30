@@ -1,0 +1,8 @@
+{
+  "builder": "nixpacks",
+  "services": {
+    "grok-connector": {
+      "startCommand": "node grok-connector-server.js"
+    }
+  }
+}

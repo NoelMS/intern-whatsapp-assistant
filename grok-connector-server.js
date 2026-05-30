@@ -1,6 +1,7 @@
 // Standalone Grok Connector Server for Railway deployment
 // This server acts as a webhook proxy between the main WhatsApp bot and X.AI Grok API
 // Deploy this to Railway separately for 24/7 uptime
+// This file has ZERO dependencies on Twilio - it's completely standalone
 
 const express = require('express');
 const OpenAI = require('openai');
@@ -8,12 +9,19 @@ const OpenAI = require('openai');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Initialize X.AI Grok client
-const grokClient = new OpenAI({
-  apiKey: process.env.XAI_API_KEY,
-  baseURL: 'https://api.x.ai/v1',
-  timeout: 10000
-});
+// Initialize X.AI Grok client (only if XAI_API_KEY is set)
+let grokClient = null;
+
+function getGrokClient() {
+  if (!grokClient && process.env.XAI_API_KEY) {
+    grokClient = new OpenAI({
+      apiKey: process.env.XAI_API_KEY,
+      baseURL: 'https://api.x.ai/v1',
+      timeout: 10000
+    });
+  }
+  return grokClient;
+}
 
 const MODEL = 'grok-4.3';
 
@@ -44,7 +52,8 @@ app.post('/api/grok-webhook', async (req, res) => {
       });
     }
 
-    if (!process.env.XAI_API_KEY) {
+    const client = getGrokClient();
+    if (!client) {
       console.error('XAI_API_KEY not configured');
       return res.status(503).json({
         error: 'Service not configured',
@@ -58,7 +67,7 @@ app.post('/api/grok-webhook', async (req, res) => {
     const systemPrompt = buildSystemPrompt(intern, destination);
 
     // Call Grok API
-    const response = await grokClient.chat.completions.create({
+    const response = await client.chat.completions.create({
       model: MODEL,
       messages: [
         {
