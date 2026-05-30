@@ -1,142 +1,89 @@
 {
   "destinations": [
     {
-      "id": "bangalore",
-      "name": "Bangalore, Karnataka",
+      "id": "coimbatore",
+      "name": "Coimbatore, Tamil Nadu",
       "country": "India",
-      "description": "India's Silicon Valley - A vibrant tech hub with pleasant weather year-round, known for its parks, breweries, and cosmopolitan culture",
+      "description": "Coimbatore - The Manchester of South India. A major textile and manufacturing hub with pleasant climate, proximity to Nilgiri hills, and home to Karunya Institute of Technology and Sciences",
       "coordinator": {
         "id": "coord_001",
-        "name": "Anita Desai",
-        "phone": "+919845123456",
-        "email": "anita.desai@company.com",
-        "whatsapp": "+919845123456"
+        "name": "Dr. Rajesh Kumar",
+        "phone": "+919876543210",
+        "email": "r.kumar@karunya.edu.in",
+        "whatsapp": "+919876543210",
+        "office": "Karunya Institute, Student Affairs Office"
       },
       "accommodation": {
-        "name": "Prestige Residency",
-        "address": "#42, Koramangala 5th Block, Bangalore - 560095",
-        "landmark": "Near Sony World Signal",
+        "name": "Karunya Campus Hostel - Block A",
+        "address": "Karunya Institute of Technology and Sciences, Coimbatore - 641114",
+        "landmark": "Near Karunya Main Gate, 25km from Coimbatore Airport",
         "check_in": "2025-03-01",
-        "wifi": "InternWelcome2025",
-        "room_number": "304",
-        "nearest_metro": "MG Road Metro (3 km)",
-        "nearest_bus_stop": "Koramangala Bus Stand (500m)"
+        "wifi": "Karunya-WiFi-Guest",
+        "wifi_password": "KarunyaWifi2025",
+        "room_number": "A-204",
+        "nearest_metro": "Not available - autos/cabs recommended",
+        "nearest_bus_stop": "Karunya Bus Stop (on campus)",
+        "nearest_airport": "Coimbatore International Airport (25km)",
+        "distance_to_institute": "On campus"
       },
       "emergency_info": {
         "local_police": "100",
         "ambulance": "108",
         "fire": "101",
-        "nearest_hospital": "Manipal Hospital, Old Airport Road - 4km",
-        "hospital_phone": "+918025522222",
-        "embassy_contact": "Not required (within India)"
+        "campus_security": "+914224680000 ext 5555",
+        "nearest_hospital": "Karunya Medical Centre (on campus)",
+        "hospital_phone": "+914224680444",
+        "city_hospital": "Ganga Hospital, Coimbatore - 15km",
+        "city_hospital_phone": "+914224242424",
+        "airport_emergency": "+914233360000"
       },
       "local_tips": {
         "currency": "Indian Rupees (INR)",
         "timezone": "IST (UTC+5:30)",
-        "language": "Kannada, Hindi, English widely spoken",
-        "weather": "Pleasant year-round (20-28°C). Carry light jacket for evenings",
-        "transport": "Namma Metro, BMTC buses, Ola/Uber autos and cabs widely available",
-        "power": "230V, Type D & M sockets (carry adapter if needed)"
+        "language": "Tamil, Telugu, Kannada, Hindi, English widely spoken",
+        "weather": "Pleasant year-round (20-32°C). Monsoon July-September. Best time: Oct-Feb",
+        "transport": "Local buses (SETC), autos (negotiate or use meter), Ola/Uber, share autos",
+        "power": "230V, Type D & M sockets",
+        "airport_transport": "Autos (₹400-500), Uber/Ola (₹300-400), Airport bus (₹100)"
       },
       "popular_areas": [
-        "MG Road - Shopping and nightlife",
-        "Indiranagar - Cafes and restaurants",
-        "Koramangala - Food and entertainment",
-        "Electronic City - IT hub",
-        "Whitefield - Tech parks"
-      ]
-    },
-    {
-      "id": "hyderabad",
-      "name": "Hyderabad, Telangana",
-      "country": "India",
-      "description": "City of Pearls - A historic city blending traditional culture with modern IT industry, famous for biryani and iconic Charminar",
-      "coordinator": {
-        "id": "coord_002",
-        "name": "Vikram Reddy",
-        "phone": "+919845123457",
-        "email": "vikram.reddy@company.com",
-        "whatsapp": "+919845123457"
-      },
-      "accommodation": {
-        "name": "Cyber Heights Apartments",
-        "address": "Hitech City Main Road, Madhapur, Hyderabad - 500081",
-        "landmark": "Near Cyber Towers",
-        "check_in": "2025-03-15",
-        "wifi": "WelcomeHyd2025",
-        "room_number": "215",
-        "nearest_metro": "Hitech City Metro (1 km)",
-        "nearest_bus_stop": "Madhapur Bus Stop (300m)"
-      },
-      "emergency_info": {
-        "local_police": "100",
-        "ambulance": "108",
-        "fire": "101",
-        "nearest_hospital": "Apollo Hospital, Jubilee Hills - 5km",
-        "hospital_phone": "+918402366666",
-        "embassy_contact": "Not required (within India)"
-      },
-      "local_tips": {
-        "currency": "Indian Rupees (INR)",
-        "timezone": "IST (UTC+5:30)",
-        "language": "Telugu, Hindi, Urdu, English widely spoken",
-        "weather": "Hot summers (35-40°C), pleasant winters (15-25°C). Stay hydrated!",
-        "transport": "Hyderabad Metro, TSRTC buses, autos (negotiate fare), Rapido bikes",
-        "power": "230V, Type D & M sockets"
-      },
-      "popular_areas": [
-        "Hitech City - IT hub",
-        "Banjara Hills & Jubilee Hills - Upscale dining",
-        "Charminar area - Old city culture",
-        "Gachibowli - Financial district",
-        "Hussain Sagar Lake - Recreation"
-      ]
-    },
-    {
-      "id": "pune",
-      "name": "Pune, Maharashtra",
-      "country": "India",
-      "description": "Oxford of the East - A student city with pleasant weather, known for education institutions, nearby hill stations, and vibrant youth culture",
-      "coordinator": {
-        "id": "coord_003",
-        "name": "Neha Joshi",
-        "phone": "+919845123458",
-        "email": "neha.joshi@company.com",
-        "whatsapp": "+919845123458"
-      },
-      "accommodation": {
-        "name": "Magarpatta City Residency",
-        "address": "Tower 12, Magarpatta City, Hadapsar, Pune - 411028",
-        "landmark": "Near Seasons Mall",
-        "check_in": "2025-04-01",
-        "wifi": "PuneIntern2025",
-        "room_number": "412",
-        "nearest_metro": "Civil Court Metro (8 km) - Auto recommended",
-        "nearest_bus_stop": "Magarpatta Bus Stop (200m)"
-      },
-      "emergency_info": {
-        "local_police": "100",
-        "ambulance": "108",
-        "fire": "101",
-        "nearest_hospital": "Ruby Hall Clinic, Sassoon Road - 6km",
-        "hospital_phone": "+912026103333",
-        "embassy_contact": "Not required (within India)"
-      },
-      "local_tips": {
-        "currency": "Indian Rupees (INR)",
-        "timezone": "IST (UTC+5:30)",
-        "language": "Marathi, Hindi, English widely spoken",
-        "weather": "Pleasant climate (18-30°C). Best weather in India. Light showers common",
-        "transport": "Pune Metro (limited), PMPML buses, autos (use meter), Rapido",
-        "power": "230V, Type D & M sockets"
-      },
-      "popular_areas": [
-        "Koregaon Park - Upscale area",
-        "MG Road & Camp - Shopping",
-        "FC Road & JM Road - Student hangouts",
-        "Magarpatta - IT zone",
-        "Viman Nagar - Restaurants"
-      ]
+        "RS Puram - Shopping and restaurants",
+        "Gandhipuram - Commercial hub",
+        "Lakshmi Mills - Old town charm",
+        "Peelamedu - Educational district",
+        "Uday Nagar - Residential area"
+      ],
+      "nearby_attractions": [
+        "Ooty (Nilgiri Hills) - 90km, scenic hill station",
+        "Coonoor - 100km, tea gardens",
+        "Munnar - 110km, tea and cardamom plantations",
+        "Nilgiri Mountain Railway - Historic train ride",
+        "Avanashi Temple - 30km, pilgrimage site",
+        "Dhyanalinga - 30km, meditation center"
+      ],
+      "shopping": [
+        "Brookefields Mall - Modern shopping",
+        "Govind Square - Electronics and local shops",
+        "Organised Super Market - Groceries",
+        "Local markets - Fresh produce and traditional items"
+      ],
+      "dining": [
+        "Saravana Bhavan - South Indian vegetarian",
+        "A2B - Traditional South Indian",
+        "Annapoorna - Tamil cuisine",
+        "Ula Cafe - Multicuisine cafes",
+        "Street food - Local biryanis and chaats"
+      ],
+      "institute_info": {
+        "name": "Karunya Institute of Technology and Sciences",
+        "established": "1986",
+        "campus_size": "300 acres",
+        "location": "Rampalli, Coimbatore",
+        "website": "www.karunya.edu.in",
+        "phone": "+914224680000",
+        "departments": ["Engineering", "Management", "Science", "Law"],
+        "hostel_facilities": "WiFi, Mess, Sports, Medical, Counseling"
+      }
     }
   ]
 }

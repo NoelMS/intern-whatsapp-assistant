@@ -4,10 +4,13 @@
       "id": "intern_001",
       "name": "Rahul Sharma",
       "phone": "+911234567890",
-      "destination_id": "bangalore",
+      "destination_id": "coimbatore",
       "start_date": "2025-03-01",
       "end_date": "2025-05-31",
       "coordinator_id": "coord_001",
+      "department": "Engineering - Computer Science",
+      "hostel_block": "A",
+      "room_number": "A-204",
       "emergency_contact": {
         "name": "Rajesh Sharma",
         "phone": "+919876543210",
@@ -18,10 +21,13 @@
       "id": "intern_002",
       "name": "Priya Patel",
       "phone": "+919876543211",
-      "destination_id": "hyderabad",
+      "destination_id": "coimbatore",
       "start_date": "2025-03-15",
       "end_date": "2025-06-15",
-      "coordinator_id": "coord_002",
+      "coordinator_id": "coord_001",
+      "department": "Engineering - Mechanical",
+      "hostel_block": "B",
+      "room_number": "B-315",
       "emergency_contact": {
         "name": "Sunita Patel",
         "phone": "+919876543212",
@@ -32,10 +38,13 @@
       "id": "intern_003",
       "name": "Arun Kumar",
       "phone": "+919876543213",
-      "destination_id": "pune",
+      "destination_id": "coimbatore",
       "start_date": "2025-04-01",
       "end_date": "2025-06-30",
-      "coordinator_id": "coord_003",
+      "coordinator_id": "coord_001",
+      "department": "Engineering - Electronics",
+      "hostel_block": "C",
+      "room_number": "C-501",
       "emergency_contact": {
         "name": "Lakshmi Kumar",
         "phone": "+919876543214",
@@ -46,14 +55,17 @@
       "id": "intern_004",
       "name": "Noel Mathew Sajan",
       "phone": "+917025135070",
-      "destination_id": "bangalore",
+      "destination_id": "coimbatore",
       "start_date": "2025-05-01",
       "end_date": "2025-08-31",
       "coordinator_id": "coord_001",
+      "department": "Engineering - Information Technology",
+      "hostel_block": "A",
+      "room_number": "A-204",
       "emergency_contact": {
-        "name": "Test Contact",
+        "name": "Mathew Sajan",
         "phone": "+919999999999",
-        "relationship": "Contact"
+        "relationship": "Father"
       }
     }
   ]
