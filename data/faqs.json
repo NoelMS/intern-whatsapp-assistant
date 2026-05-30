@@ -12,36 +12,36 @@
       "question": "What is the WiFi password for the hostel?",
       "answer": "Hostel WiFi: Network: Karunya-WiFi-Guest, Password: KarunyaWifi2025. For high-speed campus WiFi, register at the IT office (room open 9 AM - 5 PM) with your hostel ID."
     },
-    {
-      "id": "faq_003",
-      "destination_id": "coimbatore",
-      "question": "How do I access the mess (dining hall) in the hostel?",
-      "answer": "Mess timings: Breakfast 7-8 AM, Lunch 12-1 PM, Dinner 7-8 PM. Hostel fee includes 3 meals daily. Vegetarian and non-vegetarian options available. Special dietary requests: contact hostel warden."
-    },
+     {
+       "id": "faq_003",
+       "destination_id": "coimbatore",
+       "question": "How do I buy food and groceries near Karunya?",
+       "answer": "Organised Super Market on campus (8 AM - 8 PM) has groceries. For more options: RS Puram has supermarkets and traditional bazaars (15 mins away). Many hotels and restaurants near Karunya: Ula Cafe, A2B (South Indian), Saravana Bhavan (vegetarian). Budget: ₹100-300 per meal at nearby restaurants. Vegetarian and non-vegetarian options widely available."
+     },
     {
       "id": "faq_004",
       "destination_id": "coimbatore",
       "question": "What are the emergency contacts at Karunya?",
       "answer": "Campus Security: +914224680000 ext 5555 (24/7). Karunya Medical Centre: +914224680444. For police/ambulance: 100/108. Student Affairs: +914224680000 ext 2000. Always inform your hostel warden in case of emergencies."
     },
-    {
-      "id": "faq_005",
-      "destination_id": "coimbatore",
-      "question": "Where can I buy groceries and daily essentials?",
-      "answer": "On campus: Organised Super Market (hostel area) open 8 AM - 8 PM. In city (RS Puram): Local supermarkets and traditional bazaars. Medical items: Health Centre on campus. Pharmacy: Campus pharmacy open 24/7 for emergency medicines."
-    },
+     {
+       "id": "faq_005",
+       "destination_id": "coimbatore",
+       "question": "Where can I buy groceries and daily essentials?",
+       "answer": "On campus: Organised Super Market (hostel area) open 8 AM - 8 PM - buy groceries and food items here. In city (RS Puram, 15km): Local supermarkets and traditional bazaars have fresh produce. Medical items: Health Centre on campus. Pharmacy: Campus pharmacy open 24/7 for emergency medicines. Many interns buy groceries and cook in hostel common kitchen or eat at nearby restaurants."
+     },
     {
       "id": "faq_006",
       "destination_id": "coimbatore",
       "question": "How can I travel to nearby cities like Ooty or Munnar?",
       "answer": "Ooty (90km): Bus from Coimbatore (₹150-200, 3 hours). Munnar (110km): Bus from Coimbatore (₹200-300, 4 hours). Both available daily. Travel agencies near campus can arrange packages. Best seasons: Oct-Feb. Pack light jacket for hill stations."
     },
-    {
-      "id": "faq_007",
-      "destination_id": "coimbatore",
-      "question": "What are the best places to eat near the campus?",
-      "answer": "On campus: Hostel mess (3 meals included). Near campus: Ula Cafe (multicuisine), A2B (South Indian), Saravana Bhavan (vegetarian), street food at campus gates. In RS Puram: Govind Square has restaurants. Budget: ₹100-300 per meal outside campus."
-    },
+     {
+       "id": "faq_007",
+       "destination_id": "coimbatore",
+       "question": "What are the best places to eat near the campus?",
+       "answer": "Near Karunya: Ula Cafe (multicuisine), A2B (South Indian), Saravana Bhavan (vegetarian), street food at campus gates. In RS Puram (nearby): Govind Square has many restaurants. Coimbatore city has diverse dining options. You can also buy groceries from Organised Super Market on campus and prepare your own meals. Budget: ₹100-300 per meal at restaurants."
+     },
     {
       "id": "faq_008",
       "destination_id": "coimbatore",
@@ -108,12 +108,12 @@
       "question": "How do I contact the international student office?",
       "answer": "International Student Office: Main Admin Building, Room 201. Hours: 9 AM - 5 PM, Mon-Fri. Phone: +914224680000 ext 2500. Email: international@karunya.edu.in. They handle visa extensions, documentation, and any immigration-related queries. Visit in person or call for urgent issues."
     },
-    {
-      "id": "faq_019",
-      "destination_id": "coimbatore",
-      "question": "What is the cost of living in Coimbatore for an intern?",
-      "answer": "Monthly expenses (excluding hostel): Meals (if not in mess) ₹3,000-5,000. Local transport ₹500-1,000. Entertainment/shopping ₹2,000-3,000. Total budget ₹5,500-9,000/month. Hostel included in package. ATMs & shops readily available. No expensive tourist traps near campus unlike hill stations."
-    },
+     {
+       "id": "faq_019",
+       "destination_id": "coimbatore",
+       "question": "What is the cost of living in Coimbatore for an intern?",
+       "answer": "Monthly food expenses: ₹3,000-5,000 (buy groceries from campus shop or eat at restaurants). Local transport ₹500-1,000. Entertainment/shopping ₹2,000-3,000. Total budget ₹5,500-9,000/month. Hostel included in package. Organised Super Market on campus and nearby RS Puram shops have affordable groceries. Many restaurants near Karunya offer budget meals."
+     },
     {
       "id": "faq_020",
       "destination_id": "coimbatore",
