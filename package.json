@@ -4,6 +4,7 @@
   "description": "WhatsApp support assistant for interns with AI-powered FAQ responses",
   "main": "api/webhook.js",
   "scripts": {
+    "start": "node server.js",
     "dev": "vercel dev",
     "deploy": "vercel --prod",
     "send-welcome": "node scripts/send-welcome.js",

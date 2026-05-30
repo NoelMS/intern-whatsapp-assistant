@@ -1,1 +1,2 @@
-web: node grok-connector-server.js
+web: npm start
+
