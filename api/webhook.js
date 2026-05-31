@@ -1,8 +1,5 @@
-// Main webhook handler for incoming WhatsApp messages
+// Main webhook handler for incoming Meta WhatsApp messages
 console.log('📝 WEBHOOK MODULE LOADED');
-
-const twilio = require('twilio');
-const crypto = require('crypto');
 
 // Lazy load to avoid issues
 let handleIncomingMessage;
@@ -13,30 +10,7 @@ try {
   console.error('❌ Failed to load message handler:', e);
 }
 
-// Manual Twilio signature validation for Vercel
-function validateTwilioSignature(url, params, signature, authToken) {
-  try {
-    // Build the data string from params
-    const keys = Object.keys(params).sort();
-    let data = url;
-    keys.forEach(key => {
-      data += key + params[key];
-    });
-    
-    // Create HMAC-SHA1 hash
-    const hash = crypto.createHmac('sha1', authToken).update(data).digest('base64');
-    
-    return hash === signature;
-  } catch (error) {
-    console.error('Signature validation error:', error.message);
-    return false;
-  }
-}
-
 module.exports = async (req, res) => {
-  // Set content type for all responses (Vercel compatibility)
-  res.setHeader('Content-Type', 'text/xml');
-  
   // Log immediately
   console.log('🚀 WEBHOOK HIT:', {
     method: req.method,
@@ -44,119 +18,84 @@ module.exports = async (req, res) => {
     timestamp: new Date().toISOString()
   });
 
-  // Only accept POST requests
-  if (req.method !== 'POST') {
-    console.log('❌ Rejected: Method not allowed');
-    return res.status(405).send(`<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Message>Method not allowed</Message>
-</Response>`);
-  }
+  // 1. Handle Webhook Verification (GET)
+  if (req.method === 'GET') {
+    const mode = req.query['hub.mode'];
+    const token = req.query['hub.verify_token'];
+    const challenge = req.query['hub.challenge'];
 
-  try {
-    // Validate Twilio webhook signature
-    const authToken = process.env.TWILIO_AUTH_TOKEN;
-    if (!authToken) {
-      console.error('❌ TWILIO_AUTH_TOKEN not configured');
-      return res.status(500).send(`<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Message>Server misconfigured: missing TWILIO_AUTH_TOKEN</Message>
-</Response>`);
+    const VERIFY_TOKEN = process.env.META_VERIFY_TOKEN;
+
+    if (!VERIFY_TOKEN) {
+      console.error('❌ META_VERIFY_TOKEN not configured');
+      return res.status(500).send('Server misconfigured');
     }
 
-    // Get the raw body and signature
-    const twilioSignature = req.headers['x-twilio-signature'] || '';
-    
-    // For Vercel, get host from headers
-    const host = req.headers.host || 'unknown';
-    const protocol = req.headers['x-forwarded-proto'] || 'https';
-    const webhookUrl = `${protocol}://${host}${req.url}`;
-    
-    console.log('🔐 Validating Twilio signature...');
-    console.log('   URL:', webhookUrl);
-    console.log('   Signature:', twilioSignature.substring(0, 10) + '...');
-    
-    // Validate using manual HMAC-SHA1
-    const isValidRequest = validateTwilioSignature(
-      webhookUrl,
-      req.body || {},
-      twilioSignature,
-      authToken
-    );
-
-    if (!isValidRequest) {
-      console.warn('⚠️ Invalid Twilio webhook signature (continuing for staging)');
-    } else {
-      console.log('✅ Twilio signature validated');
-    }
-
-    console.log('📩 Request headers:', JSON.stringify(req.headers, null, 2));
-    console.log('📩 Request body type:', typeof req.body);
-    console.log('📩 Request body:', req.body);
-    
-    // Handle both JSON and form-urlencoded bodies
-    let bodyData = req.body;
-    if (typeof bodyData === 'string') {
-      // Try to parse if it's a string
-      try {
-        bodyData = JSON.parse(bodyData);
-      } catch (e) {
-        // It's form data, use as-is
-        console.log('📩 Body is form-urlencoded string');
+    if (mode && token) {
+      if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+        console.log('✅ Webhook verified by Meta');
+        return res.status(200).send(challenge);
+      } else {
+        console.log('❌ Webhook verification failed (token mismatch)');
+        return res.status(403).send('Forbidden');
       }
     }
-    
-    // Extract message details from Twilio
-    const from = bodyData?.From || bodyData?.from;
-    const to = bodyData?.To || bodyData?.to;
-    const body = bodyData?.Body || bodyData?.body;
-    const messageSid = bodyData?.MessageSid || bodyData?.messageSid;
-
-    console.log('📩 Extracted:', { from, to, body: body?.substring(0, 50), messageSid });
-
-    if (!from || !body) {
-      console.log('❌ Missing required fields');
-      return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Message>Invalid request: missing From or Body</Message>
-</Response>`);
-    }
-
-    if (!handleIncomingMessage) {
-      console.error('❌ Message handler not available');
-      return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Message>Service temporarily unavailable. Please try again.</Message>
-</Response>`);
-    }
-
-    // Process the message
-    console.log('🔄 Processing message...');
-    const result = await handleIncomingMessage({
-      from,
-      to,
-      body,
-      messageSid
-    });
-
-    console.log('✅ Result:', result.status);
-
-    // Return empty TwiML response (message already sent via Twilio API)
-    const twiml = `<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-</Response>`;
-
-    console.log('📤 TwiML response sent');
-    return res.status(200).send(twiml);
-
-  } catch (error) {
-    console.error('❌ ERROR:', error.message);
-    console.error('Stack:', error.stack);
-    
-    // Always send valid TwiML
-    return res.status(200).send(`<?xml version="1.0" encoding="UTF-8"?>
-<Response>
-  <Message>Sorry, I'm having trouble. Please try again.</Message>
-</Response>`);
+    return res.status(400).send('Bad Request');
   }
+
+  // 2. Handle Incoming Messages (POST)
+  if (req.method === 'POST') {
+    const body = req.body;
+
+    // Check if this is an event from a WhatsApp API
+    if (body.object) {
+      try {
+        if (
+          body.entry &&
+          body.entry[0].changes &&
+          body.entry[0].changes[0] &&
+          body.entry[0].changes[0].value.messages &&
+          body.entry[0].changes[0].value.messages[0]
+        ) {
+          const message = body.entry[0].changes[0].value.messages[0];
+          
+          // Only process text messages for now
+          if (message.type === 'text') {
+            const from = message.from; // The sender's phone number
+            const bodyText = message.text.body; // The message text
+            const messageSid = message.id; // Unique message ID
+
+            console.log('📩 Extracted:', { from, body: bodyText?.substring(0, 50), messageSid });
+
+            if (!handleIncomingMessage) {
+              console.error('❌ Message handler not available');
+            } else {
+              console.log('🔄 Processing message...');
+              await handleIncomingMessage({
+                from,
+                to: 'system',
+                body: bodyText,
+                messageSid
+              });
+            }
+          } else {
+             console.log(`ℹ️ Received non-text message type: ${message.type}, skipping.`);
+          }
+        }
+        
+        // Return a '200 OK' response to all requests
+        return res.status(200).send('EVENT_RECEIVED');
+      } catch (error) {
+        console.error('❌ ERROR processing webhook:', error);
+        return res.status(500).send('Error');
+      }
+    } else {
+      // Return a '404 Not Found' if event is not from a WhatsApp API
+      return res.status(404).send('Not Found');
+    }
+  }
+
+  // Reject anything else
+  console.log('❌ Rejected: Method not allowed');
+  return res.status(405).send('Method not allowed');
 };
