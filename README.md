@@ -1,17 +1,17 @@
-# 🤖 Intern WhatsApp Assistant
+# Intern WhatsApp Assistant
 
 AI-powered WhatsApp support system for interns with FAQ responses and conversational abilities.
 
-## ✨ Features
+## Features
 
-- 📱 **WhatsApp Integration** - Twilio-powered messaging
-- 🤖 **AI Responses** - Google Gemini for intelligent replies
-- 📋 **FAQ Database** - Pre-built answers for common questions
-- 👥 **Multi-Destination** - Support for Bangalore, Hyderabad, Pune, and more
-- 🆓 **Free Tier** - Runs on free quotas (Twilio Sandbox + Gemini API)
-- 🚀 **Easy Deployment** - One-click Vercel deploy
+- **WhatsApp Integration** - Twilio-powered messaging
+- **AI Responses** - Google Gemini for intelligent replies
+- **FAQ Database** - Pre-built answers for common questions
+- **Multi-Destination** - Support for Bangalore, Hyderabad, Pune, and more
+- **Free Tier** - Runs on free quotas (Twilio Sandbox + Gemini API)
+- **Easy Deployment** - One-click Vercel deploy
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 intern-whatsapp-assistant/
@@ -34,7 +34,7 @@ intern-whatsapp-assistant/
 └── README.md                # This file
 ```
 
-## 🚀 Quick Start Guide
+## Quick Start Guide
 
 ### Step 1: Prerequisites
 
@@ -52,7 +52,7 @@ intern-whatsapp-assistant/
    - No credit card required for sandbox
 
 2. **Get WhatsApp Sandbox**
-   - Go to Console → Messaging → "Try it out" → "Send a WhatsApp message"
+   - Go to Console -> Messaging -> "Try it out" -> "Send a WhatsApp message"
    - Or directly: https://www.twilio.com/console/sms/whatsapp/sandbox
    - Note your **Sandbox Number**: `+1 415 523 8886`
 
@@ -95,7 +95,7 @@ intern-whatsapp-assistant/
    - Vercel auto-detects Node.js project
 
 3. **Add Environment Variables**
-   In Vercel Dashboard → Your Project → Settings → Environment Variables:
+   In Vercel Dashboard -> Your Project -> Settings -> Environment Variables:
    
    | Name | Value |
    |------|-------|
@@ -116,7 +116,7 @@ intern-whatsapp-assistant/
 
 ### Step 5: Configure Twilio Webhook
 
-1. Go to Twilio Console → Messaging → WhatsApp Sandbox
+1. Go to Twilio Console -> Messaging -> WhatsApp Sandbox
 2. Find "When a message comes in"
 3. Paste your webhook URL:
    ```
@@ -134,7 +134,7 @@ intern-whatsapp-assistant/
    ```
    join <your-sandbox-phrase>
    ```
-   (Find your unique phrase in Twilio Console → WhatsApp Sandbox)
+   (Find your unique phrase in Twilio Console -> WhatsApp Sandbox)
 3. They'll get confirmation: "You are now connected..."
 
 4. **Add their number in Twilio:**
@@ -178,31 +178,31 @@ Edit these files with real data:
    npm run send-welcome
    ```
 
-## 💡 How It Works
+## How It Works
 
 ```
 Intern sends WhatsApp
-        ↓
+        |
 Twilio Sandbox (+1 415 523 8886)
-        ↓
-Webhook → Your Vercel API
-        ↓
+        |
+Webhook -> Your Vercel API
+        |
 Identify intern by phone number
-        ↓
+        |
 Check FAQ keywords match?
-        ↓
-   Yes → Return FAQ answer
-   No → Call Gemini AI
-        ↓
+        |
+   Yes -> Return FAQ answer
+   No -> Call Gemini AI
+        |
 Send response via WhatsApp
 ```
 
-## 📊 Current Data
+## Current Data
 
 **Destinations:**
-- 🇮🇳 Bangalore, Karnataka
-- 🇮🇳 Hyderabad, Telangana  
-- 🇮🇳 Pune, Maharashtra
+- Bangalore, Karnataka
+- Hyderabad, Telangana  
+- Pune, Maharashtra
 
 **Sample Interns:** 3 (Rahul, Priya, Arun)
 
@@ -215,7 +215,7 @@ Send response via WhatsApp
 - Weekend trips
 - Local customs
 
-## 🛠️ Customization
+## Customization
 
 ### Adding a New Destination
 
@@ -241,7 +241,7 @@ Send response via WhatsApp
 }
 ```
 
-3. Push to GitHub → Auto-deploys!
+3. Push to GitHub -> Auto-deploys!
 
 ### Adding a New Intern
 
@@ -256,32 +256,32 @@ Edit `data/interns.json`:
 }
 ```
 
-## ⚠️ Important Notes
+## Important Notes
 
 ### Twilio Sandbox Limitations
 
-- ✅ **Free for testing** - 1000 messages/day
-- ✅ **Perfect for your use** - 10-20 interns
-- ⚠️ **Must approve numbers** - Add each intern to Sandbox Participants
-- ⚠️ **Shared number** - All use `+1 415 523 8886`
-- ⚠️ **Expires after 30 days** - Send 1 test message monthly to keep active
-- ⏰ **Reset daily** - Quota resets at midnight UTC
+- **Free for testing** - 1000 messages/day
+- **Perfect for your use** - 10-20 interns
+- **Must approve numbers** - Add each intern to Sandbox Participants
+- **Shared number** - All use `+1 415 523 8886`
+- **Expires after 30 days** - Send 1 test message monthly to keep active
+- **Reset daily** - Quota resets at midnight UTC
 
 ### Gemini API Limits
 
-- ✅ **1500 requests/day** - More than enough
-- ✅ **15 requests/minute** - Rate limit
-- ⚠️ **May have delays** - New keys take 5-10 min to activate
-- ⏰ **Resets daily** - Midnight PST
+- **1500 requests/day** - More than enough
+- **15 requests/minute** - Rate limit
+- **May have delays** - New keys take 5-10 min to activate
+- **Resets daily** - Midnight PST
 
 ### Vercel Free Tier
 
-- ✅ **100GB bandwidth/month**
-- ✅ **Serverless functions**
-- ⚠️ **Cold starts** - ~500ms delay on first request after idle
-- ⏰ **Functions timeout** - 10 seconds (sufficient for this)
+- **100GB bandwidth/month**
+- **Serverless functions**
+- **Cold starts** - ~500ms delay on first request after idle
+- **Functions timeout** - 10 seconds (sufficient for this)
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### "Message not delivered"
 - Check intern's phone is added to Sandbox Participants
@@ -303,32 +303,32 @@ Edit `data/interns.json`:
 - Check usage at https://ai.dev/rate-limit
 - Consider upgrading if consistently hitting limits
 
-## 🔒 Security
+## Security
 
-- ✅ **Keep .env private** - Never commit credentials
-- ✅ **Use private repo** - Don't expose intern data publicly
-- ✅ **Rotate keys** - If exposed, regenerate in Twilio/Google console
-- ✅ **Phone masking** - Logs show only last 4 digits
+- **Keep .env private** - Never commit credentials
+- **Use private repo** - Don't expose intern data publicly
+- **Rotate keys** - If exposed, regenerate in Twilio/Google console
+- **Phone masking** - Logs show only last 4 digits
 
-## 📞 Support
+## Support
 
 **Issues?**
-1. Check Vercel logs: Dashboard → Functions tab
+1. Check Vercel logs: Dashboard -> Functions tab
 2. Test Gemini API: Use the curl command from setup
 3. Verify Twilio: Send test message from console
 4. Contact your coordinator for complex issues!
 
-## 📝 License
+## License
 
 MIT License - Feel free to use and modify!
 
-## 🙏 Credits
+## Credits
 
 - Twilio WhatsApp API
 - Google Gemini AI
 - Vercel Hosting
-- Built with ❤️ for interns
+- Built for interns
 
 ---
 
-**Ready to help your interns!** 🚀
+**Ready to help your interns!**
